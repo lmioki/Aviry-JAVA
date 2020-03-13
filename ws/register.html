@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/register.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <title>Register</title>
+  </head>
+
+  <body class="body-form-register">
+    <div class="register-title">
+      <h1>CADASTRO</h1>
+    </div>
+
+    <div class="container">
+      <form>
+        <ul class="flex-outer">
+          <li>
+            <label for="login">Login</label>
+            <input
+              type="email"
+              id="login"
+              placeholder="Entre com um login ex: msantos@gmail.com"
+            />
+          </li>
+          <li>
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Entre com sua senha"
+            />
+          </li>
+          <li>
+            <label for="name">Nome</label>
+            <input type="text" id="name" placeholder="Entre com seu nome" />
+          </li>
+          <li>
+            <label >Sexo</label>
+            <select name="sexo">
+              <option value="#">Selecionar...</option>
+              <option value="Male">Masculino</option>
+              <option value="Female">Feminino</option>
+            </select>
+          </li>
+          <li>
+            <label for="date">Nascimento</label>
+            <input type="text" id="date" placeholder="dd/mm/AAAA"/>
+          </li>
+          <li>
+            <button onclick="location.href = 'login.html';" id="myButton">
+              REGISTRAR
+            </button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>

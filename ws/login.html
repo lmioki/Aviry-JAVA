@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <title>Login</title>
+  </head>
+
+  <body class="body-form-login">
+    <div class="limiter">
+      <div class="container-login">
+        <div class="wrap-login">
+          <div class="form-login">
+            <span class="form-login-title">
+              <img src="images/placeholder.png" alt="Logo da Empresa" />
+            </span>
+
+            <!-- Login -->
+            <form
+              id="front-login"
+              class="animated fadeInRight"
+              autocomplete="off"
+            >
+              <div class="wrap-input">
+                <input
+                  class="inputText"
+                  type="text"
+                  name="login"
+                  id="login"
+                  autocomplete="off"
+                />
+                <span class="focus-inputText"></span>
+                <span class="label-inputText">Login</span>
+              </div>
+
+              <div class="wrap-input">
+                <input
+                  class="inputText"
+                  type="password"
+                  name="password"
+                  id="password"
+                  autocomplete="off"
+                />
+                <span class="focus-inputText"></span>
+                <span class="label-inputText">Senha</span>
+
+                <i class="fa fa-eye" id="magic-eye" title="Mostrar Senha"></i>
+              </div>
+
+              <div class="flex-r-m forgot-password">
+                <a href="#" id="forgot-password">
+                  Esqueci a minha senha
+                </a>
+              </div>
+
+              <div class="container-form-login-btn">
+                <button type="submit" class="form-login-btn">
+                  Entrar
+                </button>
+              </div>
+
+              <div class="register">
+                <a href="register.html">
+                  Cadastre-se
+                </a>
+              </div>
+            </form>
+            <!-- / Login -->
+
+            <!-- Esqueci a Senha -->
+            <div id="front-forgot-password" class="animated fadeInRight">
+              <div class="wrap-input">
+                <input class="inputText" type="text" name="Usuario" />
+                <span class="focus-inputText"></span>
+                <span class="label-inputText">Usuário</span>
+              </div>
+
+              <span class="text-or flex-c-b">
+                Ou
+              </span>
+
+              <div class="wrap-input">
+                <input class="inputText" type="text" name="email" />
+                <span class="focus-inputText"></span>
+                <span class="label-inputText">E-mail</span>
+              </div>
+
+              <div class="flex-r-m forgot-password">
+                <a href="#" id="back">
+                  Voltar
+                </a>
+              </div>
+
+              <div class="container-form-login-btn">
+                <button type="submit" class="form-login-btn">
+                  Redefinir Senha
+                </button>
+              </div>
+            </div>
+            <!-- / Esqueci a Senha -->
+          </div>
+          <!-- background-image: url('images/coke-bubbles.jpeg');-->
+          <div class="login-more" style="background-color: #6b2435">
+            <h1>Bem Vindo</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        "use strict";
+
+        // Ao perder o foco dos campos input, setar classe para manter o tamanho do campo com o placeholder e o texto digitado
+        $(".inputText").each(function() {
+          $(this).on("blur", function() {
+            if (
+              $(this)
+                .val()
+                .trim() != ""
+            ) {
+              $(this).addClass("has-val");
+            } else {
+              $(this).removeClass("has-val");
+            }
+          });
+        });
+
+        // Mostrar ou Ocultar a senha ao clicar no icone de olho magico
+        $("#magic-eye").click(function() {
+          var passwordField = $("#password");
+          var passwordFieldType = passwordField.attr("type");
+
+          if (passwordFieldType == "password") {
+            $(this).attr("title", "Ocultar a Senha");
+            $("#password").attr("type", "text");
+          } else {
+            $(this).attr("title", "Mostrar a Senha");
+            $("#password").attr("type", "password");
+          }
+        });
+
+        // Trocar login por esqueci a minha senha
+        $("#forgot-password").click(function() {
+          $("#front-forgot-password").show();
+          $("#front-login").hide();
+        });
+
+        // Trocar esqueci a minha senha por Login
+        $("#back").click(function() {
+          $("#front-forgot-password").hide();
+          $("#front-login").show();
+        });
+      });
+    </script>
+  </body>
+</html>
